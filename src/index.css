@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+header {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  margin: auto -16px;
+  padding: 0.5rem 48px;
+}
+
+a {
+  color: black !important;
+  text-decoration: none;
+}
+
+html {
+  width: 100%;
+}
+
+/********************************* Navbar Styling ****************************/
+
+.logo-font{
+  font-family: 'Sulphur Point', sans-serif;
+}
+
+.nav{
+  margin-top: 1%;
+}
+
+.nav-left{
+  margin-left: 2%;
+  width: 40%;
+}
+
+.nav-right{
+  width: 35%;
+}
+
+.nav-right a{
+  margin-right: 6%;
+  margin-top: 3%;
+  color: black;
+  text-decoration: none;
+  font-size: 1.4em;
+  transition: ease 0.1s ;
+}
+
+.nav-left a{
+  margin-right: 3%;
+  margin-top: 3%;
+  margin-left: 6%;
+  color: black;
+  text-decoration: none;
+  font-size: 1.4em;
+}
+
+.navbar li {
+  display: inline;
+  padding: 10px;
+}
+
+.navbar a {
+  display: block;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav-right a:hover{
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
+}
+
+#myprofilelink a{
+  width: 30%;
+}
+
+/********************************* Footer Styling ****************************/
+.footer-wrapper {
+  padding-bottom: 7rem;
+}
+
+footer {
+  padding-top: 5%;
+  position: absolute;
+  margin-top: 10%;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 7rem;
+}
+
+footer p {
+  color: rgb(94, 94, 94);
+}
+
+/******************************** Home Page Styling **************************/
+.content {
+  position: relative;
+  min-height: 100vh;
+}
+
+.home-container {
+  margin: 20% 5% 0% 10%;
+}
+
+.home-content-left{
+  width: 50%;
+}
+
+/********************************* Profile Styling ****************************/
+.profile {
+  border-radius: 2em;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  left: 50%;
+  max-width: 1000px;
+  min-width: 800px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top-profile {
+  padding: 0.5rem 5rem;
+  padding-top: 2%;
+}
+
+.circle-avatar {
+  border-radius: 50%;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.8);
+  float: left;
+  height: 90px;
+  margin: 10px;
+  width: 90px;
+}
+
+.profile-name {
+  font-size: larger;
+  height: 100px;
+  padding-top: 10px;
+}
+
+.bottom-profile {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 1em;
+  text-align: center;
+}
+
+.bottom-profile-components {
+  border: 3px solid lightgray;
+  border-radius: 15px;
+  min-height: 300px;
+  min-width: 30%;
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
+  padding: 7px;
+}
+

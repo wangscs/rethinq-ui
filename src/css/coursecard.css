@@ -1,0 +1,29 @@
+.course-card{
+    margin: 30px 11px 0px 11px;
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    text-decoration: none;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.1s ease-out !important;
+}
+
+.course-card:hover{
+    transform: scale(1.05);
+}
+
+.course-card h2{
+    text-decoration: none;
+}
+
+.course-card img{
+    height: 80%;
+    overflow: hidden;
+}
+
+.card-img-container{
+    height: 60%;
+    background-image: url(../img/img3.jpg);
+    background-size: cover;
+    margin-bottom: 5%;
+}

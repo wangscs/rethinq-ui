@@ -1,0 +1,60 @@
+/* Home Page Styling */
+.home-container {
+    margin: 15% 0% 0% 5%;
+  }
+  
+  .home-content-left{
+    width: 60%;
+    margin-right: 10%;
+  }
+  
+  .home-content-right{
+    width: 40%;
+    overflow: hidden;
+
+  }
+  
+  .home-button-container{
+    width: 80%;
+    margin: 10% 10% 0% 0%;
+  }
+  
+  .home-button-container button{
+    margin: 10px 5px 5px 5px;
+  }
+  
+  .home-button-top-row .home-button{
+    width: 150%;
+  }
+
+  .home-button button{
+    width: 96%;
+  }
+  
+  .circle-cont img {
+    width: 140%;
+    height: 100%;
+    margin-top: -10%;
+    overflow: hidden;
+  }
+
+  .homepage-form{
+    width: 100%;
+  }
+
+  .about-container{
+    margin-top: 20%;
+  }
+
+  .about-left{
+    width: 38% !important;
+    margin-left: -10%;
+  }
+
+  .about-right{
+    width: 50% !important;
+    padding: 3%;
+    /* margin-left: -20%; */
+  }
+
+
