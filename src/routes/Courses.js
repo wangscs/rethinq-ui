@@ -1,7 +1,7 @@
 import React from 'react';
 import CourseList from '../components/CourseList'
 
-const Home = () => {
+const Courses = () => {
 		return (
 			<div className="container explore-container">
                 <h1 className="text-center display-1 logo-font">Explore Courses</h1>
@@ -13,4 +13,4 @@ const Home = () => {
 }
 
 
-export default Home;
+export default Courses;

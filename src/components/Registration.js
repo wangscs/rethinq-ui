@@ -1,49 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react';
-import AuthContext from '../Context/AuthContext/AuthContext';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
 
-function Registration(props) {
-
-	const authContext = useContext(AuthContext);
-	let history = useHistory();
-
-    const [ user, setUser ] = useState({
-        username: '',
-		email: '',
-        fname:'',
-        lname:'',
-		password: '',
-		confirmPassword: ''
-    });
-
-    
-	const { email, username, password, fname, lname } = user;
-	const { register, error, isAuthenticated } = authContext;
-    
-    useEffect(
-		() => {
-			if (isAuthenticated) {
-				history.push('/courses');
-			}
-
-			if (error === 'User already exists') {
-			}
-		},[ error, isAuthenticated, props.history ]// eslint-disable-line react-hooks/exhaustive-deps
-    );
-
-    const handleChange = (event) => {
-		event.persist();
-		setUser((user) => ({
-			...user,
-			[event.target.id]: event.target.value
-		}));
-    };
-    
-    const handleSubmit = (event) => {
-		event.preventDefault();
-		register({ email, username, password, fname, lname });
-	};
-    
+function Registration() {
     return (
         <div>
             {/* <img src=""/> */}
@@ -54,20 +11,20 @@ function Registration(props) {
                         <div className="card-header">Register</div>
         
                         <div className="card-body">
-                            <form method="POST" action="{{ route('login') }}" onSubmit={handleSubmit}>
+                            <form method="POST" action="{{ route('login') }}">
                                 
                             <div className="form-group row">
                                     <label for="email" className="col-md-4 col-form-label text-md-right">Username</label>
         
                                     <div className="col-md-6">
-                                        <input id="username" type="username" className="form-control" name="username" required autocomplete="username" value={user.username} onChange={handleChange} autofocus/>
+                                        <input id="username" type="username" className="form-control" name="username" required autocomplete="username" autofocus/>
                                     </div>
                                 </div>
                                 <div className="form-group row">
                                     <label for="name" className="col-md-4 col-form-label text-md-right">Email</label>
         
                                     <div className="col-md-6">
-                                        <input id="email" type="email" className="form-control" name="email" required autocomplete="email" value={user.email} onChange={handleChange} autofocus/>
+                                        <input id="email" type="email" className="form-control" name="email" required autocomplete="email" autofocus/>
         
                                     </div>
                                 </div>
@@ -76,7 +33,7 @@ function Registration(props) {
                                     <label for="name" className="col-md-4 col-form-label text-md-right">First Name</label>
         
                                     <div className="col-md-6">
-                                        <input id="fname" type="fname" className="form-control" name="fname" required autocomplete="given-name" value={user.fname} onChange={handleChange} autofocus/>
+                                        <input id="fname" type="fname" className="form-control" name="fname" required autocomplete="given-name" autofocus/>
         
                                     </div>
                                 </div>
@@ -84,7 +41,7 @@ function Registration(props) {
                                     <label for="lname" className="col-md-4 col-form-label text-md-right">Last Name</label>
         
                                     <div className="col-md-6">
-                                        <input id="lname" type="lname" className="form-control" name="lname" required autocomplete="family-name" value={user.lname} onChange={handleChange} autofocus/>
+                                        <input id="lname" type="lname" className="form-control" name="lname" required autocomplete="family-name" autofocus/>
         
                                     </div>
                                 </div>
@@ -93,7 +50,7 @@ function Registration(props) {
                                     <label for="password" className="col-md-4 col-form-label text-md-right">Password</label>
         
                                     <div className="col-md-6">
-                                        <input id="password" type="password" className="form-control" name="password" required autocomplete="current-password" value={user.password} onChange={handleChange} autofocus/>
+                                        <input id="password" type="password" className="form-control" name="password" required autocomplete="current-password" autofocus/>
         
                                     </div>
                                 </div>
@@ -101,7 +58,7 @@ function Registration(props) {
                                     <label for="confirmPassword" className="col-md-4 col-form-label text-md-right">Confirm Password</label>
         
                                     <div className="col-md-6">
-                                        <input id="confirmPassword" type="confirmPassword" className="form-control" name="confirmPassword" required autocomplete="current-password" value={user.confirmPassword} onChange={handleChange} autofocus/>
+                                        <input id="confirmPassword" type="confirmPassword" className="form-control" name="confirmPassword" required autocomplete="current-password" autofocus/>
         
                                     </div>
                                 </div>

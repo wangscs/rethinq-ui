@@ -13,14 +13,14 @@ const Home = (props) => {
                         <h1 className="display-4">A new way to find your next tutor.</h1>
                         <div className="d-flex flex-column home-button-container">
                             <div className="d-flex flex-row justify-content-around home-button-top-row">
-                                <form className="homepage-form" onSubmit={handleSubmit}>
+                                <form className="homepage-form" >
                                     <div className="form-group">
                                         <label>Username</label>
-                                        <input type="username" id="username" className="form-control" value={user.username} onChange={handleChange} />
+                                        <input type="username" id="username" className="form-control" />
                                     </div>
                                     <div className="form-group">
                                         <label>Password</label>
-                                        <input type="password" id="password" className="form-control" value={user.password} onChange={handleChange} />
+                                        <input type="password" id="password" className="form-control"/>
                                     </div>
                                     <button type="submit" className="btn btn-outline-dark">Submit</button>
                                 </form>
