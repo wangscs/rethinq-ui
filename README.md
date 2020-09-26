@@ -4,7 +4,6 @@
 - Janeth Arriola
 - Zachary Garcia
 - Steven Wang
-- Slav Tourachev
 
 ### To run:
 - `npm install`

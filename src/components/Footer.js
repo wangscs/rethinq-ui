@@ -7,7 +7,7 @@ function Footer() {
             <footer>
                 <p>
                     ShellHacks 2020<br/>
-                    Team: Janeth Janeth Arriola, Zachary Garcia, Steven Wang, Slav Tourachev<br/>
+                    Team: Janeth Janeth Arriola, Zachary Garcia, Steven Wang<br/>
                     Make sure to wash your hands!<br/>
                     Copyright ⓒ {year}
                 </p>
