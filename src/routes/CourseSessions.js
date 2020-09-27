@@ -31,7 +31,8 @@ const CourseSessions = (props) => {
 				<span className='tutoring-session-title'>Rating</span>
 				<span className='tutoring-session-title'>Course Grade</span>
 				<span className='tutoring-session-title'>Hourly Rate</span>
-                <span className='tutoring-session-title'></span>
+				<span className='tutoring-session-title session-title--lg'>Availability</span>
+				<span className='tutoring-session-title'></span>
 			</div>
 			{course?.tutoringOptions?.map((tutoringOption) => (
 				<TutoringOption

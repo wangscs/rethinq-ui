@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { API_ENDPOINT } from "../constants";
 import { getRating } from "../utils/getRating";
+import { isAvailable } from "../utils/isAvailable";
 
 const TutoringOption = (props) => {
 	const [tutor, setTutor] = useState({});
 	const { id, grade, hourlyRate, rating, ratingCount } = props.tutoringOption;
-	const { firstName, lastName } = tutor;
+	const { firstName, lastName, availability } = tutor;
 	useEffect(() => {
 		const url = `${API_ENDPOINT}/tutor-course/${id}/tutor`;
 		fetch(url)
@@ -28,6 +29,64 @@ const TutoringOption = (props) => {
 			</span>
 			<span className='tutoring-session-field'>{grade}</span>
 			<span className='tutoring-session-field'>${hourlyRate}</span>
+			<span className='tutoring-session-field session-title--lg'>
+				<span
+					className={
+						isAvailable("U", availability)
+							? "availability-open"
+							: "availability-closed"
+					}>
+					U
+				</span>
+				<span
+					className={
+						isAvailable("M", availability)
+							? "availability-open"
+							: "availability-closed"
+					}>
+					M
+				</span>
+				<span
+					className={
+						isAvailable("T", availability)
+							? "availability-open"
+							: "availability-closed"
+					}>
+					T
+				</span>
+				<span
+					className={
+						isAvailable("W", availability)
+							? "availability-open"
+							: "availability-closed"
+					}>
+					W
+				</span>
+				<span
+					className={
+						isAvailable("TH", availability)
+							? "availability-open"
+							: "availability-closed"
+					}>
+					TH
+				</span>
+				<span
+					className={
+						isAvailable("F", availability)
+							? "availability-open"
+							: "availability-closed"
+					}>
+					F
+				</span>
+				<span
+					className={
+						isAvailable("S", availability)
+							? "availability-open"
+							: "availability-closed"
+					}>
+					S
+				</span>
+			</span>
 			<span className='tutoring-session-field'>
 				<button class='btn btn-primary text-white'>Book Tutor</button>
 			</span>
