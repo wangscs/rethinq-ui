@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import Avatar from "./Avatar";
 import CoursesOffered from "./CoursesOffered";
 import MySessions from "./MySessions";
-import NowTaking from "./NowTaking";
+import CoursesReceiving from "./CoursesReceiving";
 import { API_ENDPOINT } from "../constants";
 import { UserContext } from "../context/UserContext";
 
@@ -20,21 +20,9 @@ function Profile() {
 	//         .catch(error => console.log(error))
 	// }, []);
 	// console.log(user);
-
-    // /** Magic stuff that connects to backend */
-    // const [user, setUser] = useState({});
-    // useEffect(() => {
-    //     const url = `${API_ENDPOINT}/users/2`;
-    //     fetch(url)
-    //         .then(res => res.json())
-    //         .then(data => setUser(data))
-    //         .catch(error => console.log(error))
-    // }, []);
-    // console.log(user);
     
     const { loggedIn, loggedInUser } = useContext(UserContext);
-    // console.log("ajnsdkjanskdjnaskdjnasd")
-    // console.log(loggedInUser);
+    console.log(loggedInUser);
 
     return (
         <div className="profile">
@@ -51,7 +39,9 @@ function Profile() {
                     myCourses={loggedInUser.myCourses}
                 />
                 <MySessions />
-                <NowTaking />
+                <CoursesReceiving 
+                    userTutorRequestSent={loggedInUser.tutorRequestsSent}
+                />
             </div>
         </div>
     )
