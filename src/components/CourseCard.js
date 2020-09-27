@@ -27,8 +27,8 @@ const CourseCard = ({ courseContent, previousPage }) => {
 		//take course logic
 	};
 
-	const teachCourse = (course_id) => {
-		history.push("/teach-course-form");
+	const teachCourse = (this_course) => {
+		history.push("/teach-course-form", { course: this_course });
 		// fetch(`${API_ENDPOINT}/tutor-course/student=` + loggedInUser.id + `/course=` + course_id + `/add`, options)
 		// 	.then((res) => res.json())
 		// 	.then((data) => {
@@ -49,8 +49,8 @@ const CourseCard = ({ courseContent, previousPage }) => {
 						<p class="card-text">{course.code}</p>
 					</Link>
 					{previous == 'teacher' ?
-						<button onClick={() => teachCourse(course.id)} class="btn btn-danger text-white">Teach</button> :
-						<button onClick={() => takeCourse(course.id)} class="btn btn-primary text-white">Learn</button>}
+						<button onClick={() => teachCourse(course)} class="btn btn-danger text-white">Teach</button> :
+						<button onClick={() => takeCourse(course)} class="btn btn-primary text-white">Learn</button>}
 				</div>
 			</div>
 		</div>
