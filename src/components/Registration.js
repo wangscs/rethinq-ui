@@ -4,7 +4,6 @@ import { API_ENDPOINT } from "../constants";
 import { UserContext } from "../context/UserContext";
 
 function Registration() {
-	console.log(API_ENDPOINT);
 	const { login } = useContext(UserContext);
 	const [user, setUser] = useState({
 		firstName: "",
@@ -135,10 +134,10 @@ function Registration() {
 												className='form-control'
 												placeholder='College Year'
 												onChange={handleChange}>
-												<option value='Food'>FRESHMAN</option>
-												<option value='Grocery'>SOPHOMORE</option>
-												<option value='Toiletry'>JUNIOR</option>
-												<option value='Medicine'>SENIOR</option>
+												<option value='FRESHMAN'>Freshman</option>
+												<option value='SOPHOMORE'>Sophomore</option>
+												<option value='JUNIOR'>Junior</option>
+												<option value='SENIOR'>Senior</option>
 											</select>
 										</div>
 									</div>
