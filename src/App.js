@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import Home from './routes/Home';
 import Profile from "./components/Profile";
+import Teaching from "./components/Teaching"
 import Login from './routes/Login'
 import Courses from './routes/Courses'
 import AddCourse from './components/AddCourse'
@@ -23,6 +24,7 @@ function App() {
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/registration' component={Registration} />
+            <Route exact path='/teaching' component={Teaching} />
             <Route exact path='/courses' component={Courses} />
             <Route exact path='/profile' component={Profile} />
             <Route exact path='/course/:courseId/book' component={CourseSessions} />

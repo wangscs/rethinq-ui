@@ -5,6 +5,7 @@ import App from "./App";
 import "./css/homepage.css";
 import "./css/explore.css";
 import "./css/coursecard.css";
+import "./css/teaching.css";
 import "./css/utils.css";
 import "./css/sessions.css";
 import "./css/profile.css";
