@@ -1,0 +1,22 @@
+.tutoring-session-titles {
+    display: flex;
+    margin: 2rem 0 0 0;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: .5rem 0;
+}
+
+.tutoring-session-title {
+    width: 20%;
+    text-align: center;
+}
+
+.tutoring-session-fields {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.tutoring-session-field {
+    width: 20%;
+    text-align: center;
+}
