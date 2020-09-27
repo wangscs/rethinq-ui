@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useContext}from "react";
 import Avatar from "./Avatar";
-import ListStudent from "./ListStudent"
+import ListStudent from "./ListStudent";
 import {API_ENDPOINT} from "../constants";
 import { UserContext } from "../context/UserContext";
 

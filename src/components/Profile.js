@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import Avatar from "./Avatar";
 import MyCourses from "./CoursesOffered";
 import MySessions from "./MySessions";
 import NowTaking from "./NowTaking";
 import {API_ENDPOINT} from "../constants";
+import { UserContext } from "../context/UserContext";
 
 /** Hardcoded stuff that needs to be retrieved from db */
 const testing = [
