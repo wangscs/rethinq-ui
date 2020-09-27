@@ -32,7 +32,6 @@ function Registration() {
 		fetch(url, options)
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
 				login(data);
 				history.push("/profile");
 			})
