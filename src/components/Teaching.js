@@ -1,7 +1,8 @@
-import React, {useEffect, useState}from "react";
+import React, {useEffect, useState, useContext}from "react";
 import Avatar from "./Avatar";
 import ListStudent from "./ListStudent"
 import {API_ENDPOINT} from "../constants";
+import { UserContext } from "../context/UserContext";
 
 const testing = [
     {
@@ -13,41 +14,33 @@ const testing = [
 
 function Teaching() {
 
-    /** Magic stuff that connects to backend */
-    const [user, setUser] = useState({});
-    useEffect(() => {
-        const url = `${API_ENDPOINT}/users/1`;
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setUser(data))
-            .catch(error => console.log(error))
-    }, []);
-    console.log(user);
+    // /** Magic stuff that connects to backend */
+    // const [user, setUser] = useState({});
+    // useEffect(() => {
+    //     const url = `${API_ENDPOINT}/users/1`;
+    //     fetch(url)
+    //         .then(res => res.json())
+    //         .then(data => setUser(data))
+    //         .catch(error => console.log(error))
+    // }, []);
+    // console.log(user);
+    const { loggedIn, loggedInUser } = useContext(UserContext);
 
+    console.log(loggedInUser);
     return (
         <div className="">
             <div>
                 <Avatar 
                     imageURL={testing[0].imageURL}
-                    fName={user.firstName}
-                    lName={user.lastName}
-                    rating={user.gpa}
+                    fName={loggedIn.firstName}
+                    lName={loggedIn.lastName}
+                    rating={loggedIn.gpa}
                 />
             </div>
             <div>
-                <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>Course</th>
-                        <th>Email</th>
-                        <th>Next Session</th>
-                        <th>Session Length</th>
-                        <th>Sessions Left</th>
-                    </tr>
-                    <ListStudent 
-                        myStudent={user.myCourses}
-                    />
-                </table>
+                <ListStudent 
+                    myStudent={loggedIn.tutorRequestsReceived}
+                />
             </div>
         </div>
     );

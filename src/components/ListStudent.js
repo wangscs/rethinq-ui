@@ -3,18 +3,29 @@ import React from "react";
 function listRow(student) {
     return (
         <tr>
-            <td>{student.id}, {student.grade}</td>
+            <td>{student.id}</td>
+            <td>{student.bookedStart}</td>
+            <td>{student.bookedEnd}</td>
+            <td>{student.rating}</td>
         </tr>
     );
 }
 
 function ListStudent(props) {
     
-    const {theStudent} = props;
-
+    const {myStudent} = props;
+    console.log(myStudent);
     return (
         <div>
-            {theStudent && theStudent.map(student => listRow(student))}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Email</th>
+                    <th>Next Session</th>
+                </tr>
+                {myStudent && myStudent.map(student => listRow(student))}
+            </table>
         </div>
     );
 }
