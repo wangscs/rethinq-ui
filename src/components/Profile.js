@@ -25,8 +25,6 @@ function Profile() {
             .then(data => setUser(data))
             .catch(error => console.log(error))
     }, []);
-    console.log(user);
-
     
     return (
         <div className="profile">
