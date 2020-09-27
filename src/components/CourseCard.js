@@ -2,16 +2,10 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Books from '../img/img2.jpg'
 import { useHistory } from "react-router-dom";
-import { API_ENDPOINT } from '../constants';
 import { UserContext } from "../context/UserContext";
 
 const CourseCard = ({ courseContent, previousPage }) => {
 
-	const options = {
-		method: "POST",
-		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify({ "grade": "A", "hourlyRate": 21 }),
-	};
 
 
 	const { loggedInUser } = useContext(UserContext);
@@ -29,13 +23,6 @@ const CourseCard = ({ courseContent, previousPage }) => {
 
 	const teachCourse = (this_course) => {
 		history.push("/teach-course-form", { course: this_course });
-		// fetch(`${API_ENDPOINT}/tutor-course/student=` + loggedInUser.id + `/course=` + course_id + `/add`, options)
-		// 	.then((res) => res.json())
-		// 	.then((data) => {
-		// 		console.log('res');
-		// 		console.log(data);
-		// 	})
-		// 	.catch((err) => console.error(err));
 	};
 
 	return (
