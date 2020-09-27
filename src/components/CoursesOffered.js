@@ -1,15 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-<<<<<<< HEAD
 /** TODO:
  * Course ID must be changed to reflect the name of the course */
 
-=======
-/** 
- * Courses Offered should list all the courses you are willing to tutor in
- */
->>>>>>> 9061f007c4ce177d9125e89e3783919c1588eb7a
 function listCourse(course) {
     return (
         <p>ID: {course.id}, Grade: {course.grade}</p>
