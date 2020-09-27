@@ -74,6 +74,14 @@ function listSession(course) {
 }
 
 function MySessions() {
+	const [course, setCourse] = useState({});
+	useEffect(() => {
+		const url = `${API_ENDPOINT}/courses/2`;
+		fetch(url)
+			.then((res) => res.json())
+			.then((data2) => setCourse(data2))
+			.catch((err) => console.log(err));
+	}, []);
 
     const [course, setCourse] = useState({});
     useEffect(() => {
