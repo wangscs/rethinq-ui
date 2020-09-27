@@ -15,10 +15,7 @@ function ContextProvider({ children }) {
 		localStorage.getItem("currentUser") &&
 			setLogInUser(JSON.parse(localStorage.getItem("currentUser")));
 		localStorage.getItem("loggedIn") &&
-			setLoggedIn({
-				loggedInStatus: JSON.parse(localStorage.getItem("loggedIn")),
-			});
-		console.log(loggedIn);
+			setLoggedIn(JSON.parse(localStorage.getItem("loggedIn")));
 	}, []);
 
 	console.log("user", loggedInUser);

@@ -1,0 +1,19 @@
+.header-medium{
+    font-size: 5rem;
+}
+
+.header-small{
+    font-size: 2.5rem;
+}
+
+.header-bold {
+    font-weight: bold;
+}
+
+.mg-top-md {
+    margin-top: 3rem;
+}
+
+.mg-top-lg {
+    margin-top: 5rem;
+}
