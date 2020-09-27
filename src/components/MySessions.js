@@ -25,7 +25,7 @@ function MySessions() {
             .then(data => setCourse(data))
             .catch(err => console.log(err))
     }, []);
-    console.log(course);
+    // console.log(course);
 
     return (
         <div className="bottom-profile-components">

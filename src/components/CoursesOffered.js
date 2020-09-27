@@ -12,6 +12,7 @@ function listCourse(course) {
 function CoursesOffered(props) {
     
     const {myCourses} = props;
+    // console.log(myCourses)
     return (
         <div className="bottom-profile-components">
             <h3>Courses Offered</h3>
