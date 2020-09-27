@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import CourseCard from './CourseCard';
 import { API_ENDPOINT } from "../constants";
 import { useHistory } from "react-router-dom";
 
 
 function AddCourse() {
+
+
     const history = useHistory();
 
     const prevPage = history.location.state.from;

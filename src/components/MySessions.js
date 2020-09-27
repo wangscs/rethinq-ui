@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { API_ENDPOINT } from "../constants";
+import MySessionsDetails from "./MySessionsDetails"
 
 /**
  * My Sessions should be a list of all the tutoring sessions you have made with
@@ -18,22 +18,20 @@ function listSession(course) {
 	);
 }
 
-function MySessions() {
-	const [course, setCourse] = useState({});
-	useEffect(() => {
-		const url = `${API_ENDPOINT}/courses/2`;
-		fetch(url)
-			.then((res) => res.json())
-			.then((data) => setCourse(data))
-			.catch((err) => console.log(err));
-	}, []);
-	// console.log(course);
+function MySessions(props) {
+
+	const tutoringRequested = props.userTutorRequestReceived;
+	console.log(tutoringRequested);
 
 	return (
 		<div className='bottom-profile-components'>
 			<h3>My Sessions</h3>
-			{/* {course.map(listSession(course => course))} */}
-			{/* {course && course.map(course => listSession(course))} */}
+			{tutoringRequested && tutoringRequested.map(tutoringRequestedItem => (
+                <MySessionsDetails 
+                    key={tutoringRequestedItem.id}
+                    tutoringRequestedID={tutoringRequestedItem.id}
+                />
+            ))}
 		</div>
 	);
 }

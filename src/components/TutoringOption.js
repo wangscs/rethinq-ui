@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { API_ENDPOINT } from "../constants";
+import BookTutorModal from "../modals/BookTutorModal";
 import { getRating } from "../utils/getRating";
 import { isAvailable } from "../utils/isAvailable";
 
 const TutoringOption = (props) => {
 	const [tutor, setTutor] = useState({});
+	const [modal, setModal] = useState(null);
+
 	const { id, grade, hourlyRate, rating, ratingCount } = props.tutoringOption;
 	const { firstName, lastName, availability } = tutor;
 	useEffect(() => {
@@ -14,11 +17,11 @@ const TutoringOption = (props) => {
 			.then((data) => setTutor(data))
 			.catch((err) => console.error(err));
 	}, []);
-	//     grade: "A"
-	// hourlyRate: 20
-	// id: 2
-	// rating: null
-	// ratingCount: null
+
+	const openBookingModal = (tutoringOptions, availability) => {
+		setModal({ tutoringOptions, availability });
+	};
+
 	return (
 		<div className='tutoring-session-fields'>
 			<span className='tutoring-session-field'>
@@ -88,8 +91,14 @@ const TutoringOption = (props) => {
 				</span>
 			</span>
 			<span className='tutoring-session-field'>
-				<button class='btn btn-primary text-white'>Book Tutor</button>
+				<button
+					disabled={modal}
+					onClick={() => openBookingModal(props.tutoringOption, availability)}
+					className='btn btn-primary text-white'>
+					Book Tutor
+				</button>
 			</span>
+			{modal ? <BookTutorModal bookingData={modal} /> : null}
 		</div>
 	);
 };
