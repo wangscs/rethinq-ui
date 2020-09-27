@@ -1,14 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 const UserContext = React.createContext();
 
 function ContextProvider({ children }) {
 	const [loggedIn, setLoggedIn] = useState(false);
-	const [loggedInUser, logInUser] = useState({});
+	const [loggedInUser, setLogInUser] = useState({});
 
 	const login = (user) => {
 		setLoggedIn(true);
-		logInUser(user);
+		setLogInUser(user);
 	};
+
+	useEffect(() => {
+		//pull from local storage
+		localStorage.getItem("currentUser") &&
+			setLogInUser({
+				user: JSON.parse(localStorage.getItem("currentUser")),
+			});
+		localStorage.getItem("loggedIn") &&
+			setLoggedIn({
+				loggedInStatus: JSON.parse(localStorage.getItem("loggedIn")),
+			});
+	}, []);
+
+	useEffect(() => {
+		//save to local storage
+		localStorage.setItem("currentUser", JSON.stringify(loggedInUser));
+		localStorage.setItem("loggedIn", JSON.stringify(loggedIn));
+		localStorage.setItem("stateTime", Date.now()); //time-stamp
+	}, [loggedIn, loggedInUser]);
 
 	return (
 		<UserContext.Provider
