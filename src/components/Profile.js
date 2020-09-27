@@ -38,7 +38,9 @@ function Profile() {
                 <CoursesOffered 
                     myCourses={loggedInUser.myCourses}
                 />
-                <MySessions />
+                <MySessions 
+                    userTutorRequestReceived={loggedInUser.tutorRequestsReceived}
+                />
                 <CoursesReceiving 
                     userTutorRequestSent={loggedInUser.tutorRequestsSent}
                 />
