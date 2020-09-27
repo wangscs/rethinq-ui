@@ -22,6 +22,12 @@ const nowTakingDatabase = [
     },
 ];
 
+/**
+ * Courses Receiving should be a list where it displays the courses you
+ * are being tutored in.
+ * 
+ * @param {*} props 
+ */
 function createNowTaking(props) {
     return (
         <p>{props.courseCode}{props.courseNumber} - {props.courseName}</p>
