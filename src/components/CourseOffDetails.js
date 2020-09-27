@@ -13,7 +13,7 @@ function CourseOffDetails(props) {
 	        .catch(error => console.log(error))
     }, []);
 
-    return <p>{courseDetails.code} | {courseDetails.name}</p>;
+    return <p>{courseDetails && courseDetails.code} | {courseDetails && courseDetails.name}</p>;
 
 }
 
