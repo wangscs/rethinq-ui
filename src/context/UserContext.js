@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { API_ENDPOINT } from "../constants";
 const UserContext = React.createContext();
 
 function ContextProvider({ children }) {
@@ -14,11 +15,19 @@ function ContextProvider({ children }) {
 		//pull from local storage
 		localStorage.getItem("currentUser") &&
 			setLogInUser(JSON.parse(localStorage.getItem("currentUser")));
+
+		if (loggedInUser.id)
+			fetch(`${API_ENDPOINT}/users/${loggedInUser.id}`)
+				.then((res) => res.json())
+				.then((data) => setLogInUser(data))
+				.catch((err) => console.error(err));
+
+		console.log("user", loggedInUser);
 		localStorage.getItem("loggedIn") &&
 			setLoggedIn(JSON.parse(localStorage.getItem("loggedIn")));
+		console.log(loggedIn);
 	}, []);
 
-	console.log("user", loggedInUser);
 	useEffect(() => {
 		//save to local storage
 		localStorage.setItem("currentUser", JSON.stringify(loggedInUser));

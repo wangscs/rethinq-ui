@@ -29,7 +29,7 @@ function Profile() {
 	// console.log(user);
 
 	const { loggedIn, loggedInUser } = useContext(UserContext);
-	console.log(loggedInUser);
+	// console.log(loggedInUser);
 
 	return (
 		<div className='profile'>

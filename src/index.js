@@ -8,6 +8,8 @@ import "./css/coursecard.css";
 import "./css/utils.css";
 import "./css/sessions.css";
 import "./css/profile.css";
+import "./css/bookTutorModal.css";
+
 import { ContextProvider } from "./context/UserContext";
 
 ReactDOM.render(
