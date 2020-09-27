@@ -1,7 +1,8 @@
 import React from "react";
 
-/** TODO:
- * Course ID must be changed to reflect the name of the course */
+/** 
+ * Courses Offered should list all the courses you are willing to tutor in
+ */
 function listCourse(course) {
     return (
         <p>ID: {course.id}, Grade: {course.grade}</p>
