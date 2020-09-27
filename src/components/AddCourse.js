@@ -3,9 +3,12 @@ import axios from 'axios';
 import CourseCard from './CourseCard';
 import { API_ENDPOINT } from "../constants";
 import { useHistory } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 
 function AddCourse() {
+
+
     const history = useHistory();
 
     const prevPage = history.location.state.from;
