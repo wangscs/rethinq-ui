@@ -29,6 +29,7 @@ function Profile() {
     // console.log(user);
     
     const { loggedIn, loggedInUser } = useContext(UserContext);
+    console.log("ajnsdkjanskdjnaskdjnasd")
     console.log(loggedInUser);
 
     return (
@@ -46,7 +47,7 @@ function Profile() {
                     myCourses={loggedInUser.myCourses}
                 />
                 <MySessions 
-
+                    
                 />
                 <NowTaking 
 
