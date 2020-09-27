@@ -1,0 +1,34 @@
+
+.teachingPage {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.myStudents-table {
+    border-collapse: collapse;
+    color: rgb(77, 77, 77);
+    /* max-width: 1000px; */
+    min-width: 100%;
+    padding: 0.5rem 2rem;
+    margin: 0;
+    text-align: left;
+}
+
+.myStudents-table th {
+    font-size: larger;
+    padding: 2px 60px;
+    border-bottom: 2px solid rgb(121, 121, 121);
+} 
+
+.myStudents-table td {
+    padding: 10px 60px;
+}
+
+.myStudents-table tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.myStudents-table tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
