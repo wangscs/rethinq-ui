@@ -8,7 +8,9 @@ import Profile from "./components/Profile";
 import Teaching from "./components/Teaching"
 import Login from './routes/Login'
 import Courses from './routes/Courses'
+import AddCourse from './components/AddCourse'
 import AOS from 'aos';
+import CourseSessions from './routes/CourseSessions';
 
 AOS.init();
 
@@ -25,6 +27,8 @@ function App() {
             <Route exact path='/teaching' component={Teaching} />
             <Route exact path='/courses' component={Courses} />
             <Route exact path='/profile' component={Profile} />
+            <Route exact path='/course/:courseId/book' component={CourseSessions} />
+            <Route exact path='/add-course' component={AddCourse} />
           </Switch>
           <Footer />
         </div>
