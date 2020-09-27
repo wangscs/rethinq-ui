@@ -13,15 +13,15 @@ function ContextProvider({ children }) {
 	useEffect(() => {
 		//pull from local storage
 		localStorage.getItem("currentUser") &&
-			setLogInUser({
-				user: JSON.parse(localStorage.getItem("currentUser")),
-			});
+			setLogInUser(JSON.parse(localStorage.getItem("currentUser")));
 		localStorage.getItem("loggedIn") &&
 			setLoggedIn({
 				loggedInStatus: JSON.parse(localStorage.getItem("loggedIn")),
 			});
+		console.log(loggedIn);
 	}, []);
 
+	console.log("user", loggedInUser);
 	useEffect(() => {
 		//save to local storage
 		localStorage.setItem("currentUser", JSON.stringify(loggedInUser));
