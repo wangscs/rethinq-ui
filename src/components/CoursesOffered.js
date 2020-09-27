@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { API_ENDPOINT } from '../constants';
+import CourseOffDetails from './CourseOffDetails';
 
 let courseNames = [];
 /** TODO:
