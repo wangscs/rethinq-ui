@@ -17,30 +17,34 @@ const testing = [
 
 function Profile() {
 
-    /** Magic stuff that connects to backend */
-    const [user, setUser] = useState({});
-    useEffect(() => {
-        const url = `${API_ENDPOINT}/users/2`;
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setUser(data))
-            .catch(error => console.log(error))
-    }, []);
-    console.log(user);
+    // /** Magic stuff that connects to backend */
+    // const [user, setUser] = useState({});
+    // useEffect(() => {
+    //     const url = `${API_ENDPOINT}/users/2`;
+    //     fetch(url)
+    //         .then(res => res.json())
+    //         .then(data => setUser(data))
+    //         .catch(error => console.log(error))
+    // }, []);
+    // console.log(user);
     
+    const { loggedIn, loggedInUser } = useContext(UserContext);
+    console.log("ajnsdkjanskdjnaskdjnasd")
+    console.log(loggedInUser);
+
     return (
         <div className="profile">
             <div className="top-profile">
                 <Avatar 
                     imageURL={testing[0].imageURL}
-                    fName={user.firstName}
-                    lName={user.lastName}
-                    rating={user.gpa}
+                    fName={loggedInUser.firstName}
+                    lName={loggedInUser.lastName}
+                    rating={loggedInUser.gpa}
                 />
             </div>
             <div className="bottom-profile">
                 <MyCourses 
-                    myCourses={user.myCourses}
+                    myCourses={loggedInUser.myCourses}
                 />
                 <MySessions />
                 <NowTaking />
