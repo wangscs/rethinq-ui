@@ -28,13 +28,14 @@ const CourseCard = ({ courseContent, previousPage }) => {
 	};
 
 	const teachCourse = (course_id) => {
-		fetch(`${API_ENDPOINT}/tutor-course/student=` + loggedInUser.id + `/course=` + course_id + `/add`, options)
-			.then((res) => res.json())
-			.then((data) => {
-				console.log('res');
-				console.log(data);
-			})
-			.catch((err) => console.error(err));
+		history.push("/teach-course-form");
+		// fetch(`${API_ENDPOINT}/tutor-course/student=` + loggedInUser.id + `/course=` + course_id + `/add`, options)
+		// 	.then((res) => res.json())
+		// 	.then((data) => {
+		// 		console.log('res');
+		// 		console.log(data);
+		// 	})
+		// 	.catch((err) => console.error(err));
 	};
 
 	return (

@@ -11,6 +11,7 @@ import Courses from './routes/Courses'
 import AddCourse from './components/AddCourse'
 import AOS from 'aos';
 import CourseSessions from './routes/CourseSessions';
+import TeachCourse from './components/TeachCourse';
 
 AOS.init();
 
@@ -29,6 +30,7 @@ function App() {
             <Route exact path='/profile' component={Profile} />
             <Route exact path='/course/:courseId/book' component={CourseSessions} />
             <Route exact path='/add-course' component={AddCourse} />
+            <Route exact path='/teach-course-form' component={TeachCourse} />
           </Switch>
           <Footer />
         </div>
