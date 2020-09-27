@@ -36,14 +36,14 @@ function Profile() {
             <div className="top-profile">
                 <Avatar 
                     imageURL={testing[0].imageURL}
-                    fName={loggedIn.firstName}
-                    lName={loggedIn.lastName}
-                    rating={loggedIn.gpa}
+                    fName={loggedInUser.firstName}
+                    lName={loggedInUser.lastName}
+                    rating={loggedInUser.gpa}
                 />
             </div>
             <div className="bottom-profile">
                 <MyCourses 
-                    myCourses={loggedIn.myCourses}
+                    myCourses={loggedInUser.myCourses}
                 />
                 <MySessions 
 
