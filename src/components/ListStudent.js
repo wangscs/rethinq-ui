@@ -1,30 +1,31 @@
-import React from "react";
+import React, {useEffect, useState}from "react";
+import GrabRequestID from "./GrabRequestID";
 
-function listRow(student) {
-    return (
-        <tr>
-            <td>{student.id}</td>
-            <td>{student.bookedStart}</td>
-            <td>{student.bookedEnd}</td>
-            <td>{student.rating}</td>
-        </tr>
-    );
-}
+
 
 function ListStudent(props) {
+
+    const arrayOfObjRequestReceived = props.userTutorRequestsReceived;
+    console.log(arrayOfObjRequestReceived);
+    // const arrayOfRequestIDs = arrayOfObjRequestReceived && arrayOfObjRequestReceived.map(tutorRequest => tutorRequest.id);
+    // console.log(arrayOfRequestIDs);
     
-    const {myStudent} = props;
-    console.log(myStudent);
     return (
         <div>
             <table>
                 <tr>
-                    <th>Name</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
                     <th>Course</th>
                     <th>Email</th>
                     <th>Next Session</th>
                 </tr>
-                {myStudent && myStudent.map(student => listRow(student))}
+                {arrayOfObjRequestReceived && arrayOfObjRequestReceived.map( tutorRequest => (
+                    <GrabRequestID
+                        key={tutorRequest.id}
+                        tutorRequestID={tutorRequest.id}
+                    />
+                ))}
             </table>
         </div>
     );
