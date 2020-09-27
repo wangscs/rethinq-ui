@@ -1,11 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState}from "react";
 import Avatar from "./Avatar";
-import MyCourses from "./CoursesOffered";
-import MySessions from "./MySessions";
-import NowTaking from "./NowTaking";
+import ListStudent from "./ListStudent"
 import {API_ENDPOINT} from "../constants";
 
-/** Hardcoded stuff that needs to be retrieved from db */
 const testing = [
     {
         id: 1,
@@ -14,22 +11,22 @@ const testing = [
     }
 ]
 
-function Profile() {
+function Teaching() {
 
     /** Magic stuff that connects to backend */
     const [user, setUser] = useState({});
     useEffect(() => {
-        const url = `${API_ENDPOINT}/users/2`;
+        const url = `${API_ENDPOINT}/users/1`;
         fetch(url)
             .then(res => res.json())
             .then(data => setUser(data))
             .catch(error => console.log(error))
     }, []);
     console.log(user);
-    
+
     return (
-        <div className="profile">
-            <div className="top-profile">
+        <div className="">
+            <div>
                 <Avatar 
                     imageURL={testing[0].imageURL}
                     fName={user.firstName}
@@ -37,15 +34,23 @@ function Profile() {
                     rating={user.gpa}
                 />
             </div>
-            <div className="bottom-profile">
-                <MyCourses 
-                    myCourses={user.myCourses}
-                />
-                <MySessions />
-                <NowTaking />
+            <div>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Email</th>
+                        <th>Next Session</th>
+                        <th>Session Length</th>
+                        <th>Sessions Left</th>
+                    </tr>
+                    <ListStudent 
+                        myStudent={user.myCourses}
+                    />
+                </table>
             </div>
         </div>
-    )
+    );
 }
 
-export default Profile;
+export default Teaching;
