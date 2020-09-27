@@ -4,7 +4,7 @@ import Semicircle from '../img/img1.jpg';
 
 
 const Home = (props) => {
-
+    
 		return (
 			<div>
                 <div className="home-container d-flex flex-row justify-content-between">
