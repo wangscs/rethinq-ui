@@ -4,7 +4,7 @@ import { API_ENDPOINT } from "../constants";
 import { useHistory } from "react-router-dom";
 
 
-function AddCourse() {
+function TeachCourse() {
 
 
     const history = useHistory();
@@ -52,4 +52,4 @@ function AddCourse() {
     }
 }
 
-export default AddCourse;
+export default TeachCourse;
