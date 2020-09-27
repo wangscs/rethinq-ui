@@ -54,6 +54,7 @@ const BookTutorModal = (props) => {
 
 	const handleChange = (e) => {
 		setBookTutorData({ ...bookTutorData, [e.target.id]: e.target.value });
+		console.log(bookTutorData);
 	};
 
 	const handleSubmit = (e) => {
@@ -218,35 +219,35 @@ const BookTutorModal = (props) => {
 				</div>
 			)}
 			{timeframe ? (
-				<div className='session-time'>
-					<select
-						id='time'
-						className='select-session-time'
-						onChange={handleChange}>
-						{timesByTimeframe[timeframe].map((hour) => (
-							<option value={hour}>
-								{hour === 12
-									? "12pm"
-									: hour <= 12
-									? `${hour}am`
-									: `${hour - 12}pm`}
-							</option>
-						))}
-					</select>
-					<input
-						id='hours'
-						type='number'
-						placeholder='How many hours'
-						className='select-session-hours'
-						onChange={handleChange}
-					/>
+				<div className='insert-booking-time'>
+					<div className='session-time'>
+						<select
+							id='time'
+							className='select-session-time'
+							onChange={handleChange}>
+							{timesByTimeframe[timeframe].map((hour) => (
+								<option value={hour}>
+									{hour === 12
+										? "12pm"
+										: hour <= 12
+										? `${hour}am`
+										: `${hour - 12}pm`}
+								</option>
+							))}
+						</select>
+						<input
+							id='hours'
+							type='number'
+							placeholder='How many hours'
+							className='select-session-hours'
+							onChange={handleChange}
+						/>
+					</div>
+					<button className='btn btn-primary text-white' onClick={handleSubmit}>
+						Submit
+					</button>
 				</div>
 			) : null}
-			{bookTutorData.time && bookTutorData.hours && (
-				<button className='btn btn-primary text-white' onClick={handleSubmit}>
-					Submit
-				</button>
-			)}
 		</div>
 	);
 };
