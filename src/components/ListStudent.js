@@ -18,7 +18,6 @@ function ListStudent(props) {
                     <th>First Name</th>
                     <th>Course</th>
                     <th>Email</th>
-                    <th>Next Session</th>
                 </tr>
                 {arrayOfObjRequestReceived && arrayOfObjRequestReceived.map( tutorRequest => (
                     <GrabRequestID

@@ -39,11 +39,10 @@ function GrabRequestID(props) {
 
     return (
             <tr>
-                <td>{studentDetails.lastName} {tuteeDetails && tuteeDetails.id}</td>
-                <td>{studentDetails.firstName}</td>
+                <td>{studentDetails && studentDetails.lastName} </td>
+                <td>{studentDetails && studentDetails.firstName}</td>
                 <td>{courseDetails && courseDetails.code}</td>
-                <td>{studentDetails.email} </td>
-                <td>{studentDetails.tutorRequestSent}</td>
+                <td>{studentDetails && studentDetails.email} </td>
             </tr>
     );
 }
