@@ -1,0 +1,44 @@
+.tutoring-session-titles {
+    display: flex;
+    margin: 2rem 0 0 0;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: .5rem 0;
+}
+
+.tutoring-session-title {
+    width: 14.28%;
+    text-align: center;
+}
+
+.tutoring-session-fields {
+    display: flex;
+    margin: 1rem 0;
+    align-items: center;
+}
+
+.tutoring-session-field {
+    width: 14.28%;
+    text-align: center;
+}
+
+.session-title--lg {
+    width: 28.57%;
+}
+
+.availability-open {
+    border: 3px solid royalblue;
+    padding: 7px;
+    border-radius: 10%;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.availability-closed {
+    border: 1px solid;
+    padding: 7px;
+    border-radius: 10%;
+    margin: 0 2px;
+    background-color: darkgray;
+    cursor: not-allowed;
+}

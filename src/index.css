@@ -121,6 +121,7 @@ footer p {
 .profile {
   border-radius: 2em;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  color: rgb(77, 77, 77);
   left: 50%;
   max-width: 1000px;
   min-width: 800px;
