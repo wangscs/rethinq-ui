@@ -1,0 +1,61 @@
+.book-tutor-modal {
+    background-color: #ececec;
+    width: 50%;
+    padding: 4rem;
+    border-radius: .5rem;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.booking-availability {
+    display: flex;
+    justify-content: center;
+}
+
+.booking-header {
+    margin: 2rem 0 1rem 0;
+}
+
+.next-three-days {
+    margin: 3rem 0;
+}
+.date-display{
+    display: flex;
+    justify-content: space-around;
+}
+.available-day {
+    padding: .5rem 1rem;
+    border: 2px solid transparent;
+    border-radius: .5rem;
+    box-shadow: 0rem .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+.available-day:hover {
+    border: 2px solid royalblue;
+}
+
+.available-times {
+    display: flex;
+    justify-content: space-around;
+}
+
+.insert-booking-time {
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.session-time {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.select-session-time {
+    padding: .5rem 5rem;
+}
+
+.select-session-hours {
+    padding: .3rem 5rem;
+}

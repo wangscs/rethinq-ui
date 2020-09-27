@@ -1,22 +1,15 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import Books from '../img/img2.jpg'
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import Books from "../img/img2.jpg";
 import { useHistory } from "react-router-dom";
-import { API_ENDPOINT } from '../constants';
 import { UserContext } from "../context/UserContext";
 
 const CourseCard = ({ courseContent, previousPage }) => {
-
 	const options = {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify({ "grade": "A", "hourlyRate": 21 }),
+		body: JSON.stringify({ grade: "A", hourlyRate: 21 }),
 	};
-
-
-	const { loggedInUser } = useContext(UserContext);
-	console.log('the logged in user')
-	console.log(loggedInUser)
 
 
 	const history = useHistory();
@@ -40,17 +33,26 @@ const CourseCard = ({ courseContent, previousPage }) => {
 
 	return (
 		<div>
-
-			<div class="course-card">
-				<img class="card-img-top" src={Books} alt="Card image cap" />
-				<div class="course-card-body">
+			<div class='course-card'>
+				<img class='card-img-top' src={Books} alt='Card cap' />
+				<div class='course-card-body'>
 					<Link to={`/course/`}>
-						<h5 class="card-title">{course.name}</h5>
-						<p class="card-text">{course.code}</p>
+						<h5 class='card-title'>{course.name}</h5>
+						<p class='card-text'>{course.code}</p>
 					</Link>
-					{previous == 'teacher' ?
-						<button onClick={() => teachCourse(course)} class="btn btn-danger text-white">Teach</button> :
-						<button onClick={() => takeCourse(course)} class="btn btn-primary text-white">Learn</button>}
+					{previous === "teacher" ? (
+						<button
+							onClick={() => teachCourse(course)}
+							class='btn btn-danger text-white'>
+							Teach
+						</button>
+					) : (
+						<Link
+							to={`/course/${course.id}/book`}
+							class='btn btn-primary text-white'>
+							Learn
+						</Link>
+					)}
 				</div>
 			</div>
 		</div>
