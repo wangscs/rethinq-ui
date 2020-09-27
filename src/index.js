@@ -7,7 +7,7 @@ import "./css/explore.css";
 import "./css/coursecard.css";
 import "./css/utils.css";
 import "./css/sessions.css";
-
+import "./css/profile.css";
 import { ContextProvider } from "./context/UserContext";
 
 ReactDOM.render(
