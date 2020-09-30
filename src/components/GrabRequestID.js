@@ -18,8 +18,8 @@ function GrabRequestID(props) {
                     .then(res => res.json())
                     .then(data => {
                         setStudentDetails(data)
-                        console.log('student deta')
-                        console.log(studentDetails);
+                        // console.log('student deta')
+                        // console.log(studentDetails);
                     })
                     .catch(error => console.log(error))
             })
@@ -30,10 +30,9 @@ function GrabRequestID(props) {
     const tuteeDetails = tutorRequestDetails.tutorCourse;
     // console.log(tuteeDetails);
 
-
     const idOfStudent = tuteeDetails && tuteeDetails.id;
-    console.log('hey')
-    console.log(idOfStudent);
+    // console.log('hey')
+    // console.log(idOfStudent);
     const [studentDetails, setStudentDetails] = useState({});
     
 

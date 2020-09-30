@@ -6,10 +6,7 @@ import { UserContext } from "../context/UserContext";
     
 const imageURL = "https://www.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png";
     
-
-
 function Teaching() {
-    
     
     const { loggedIn, loggedInUser } = useContext(UserContext);
     console.log(loggedInUser);
