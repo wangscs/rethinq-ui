@@ -3,36 +3,36 @@ import {API_ENDPOINT} from "../constants";
 
 
 
-function GrabRequestID(props) {
+function GrabLearning(props) {
 
     /** pass each id into the API_ENDPOINT */
-    const [tutorRequestDetails, setTutorRequestDetails] = useState({});
+    const [tutorSentDetails, setTutorSentDetails] = useState({});
     useEffect(() => {
-        const url = `${API_ENDPOINT}/tutor-request/${props.tutorRequestID}`;
+        const url = `${API_ENDPOINT}/tutor-request/${props.tutorSentID}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                setTutorRequestDetails(data)
+                setTutorSentDetails(data)
                 const url = `${API_ENDPOINT}/users/${idOfStudent}`;
                 fetch(url)
                     .then(res => res.json())
                     .then(data => {
                         setStudentDetails(data)
-                        // console.log('student deta')
-                        // console.log(studentDetails);
+                        console.log('student deta')
+                        console.log(studentDetails);
                     })
                     .catch(error => console.log(error))
             })
             .catch(error => console.log(error))
         }, []);
 
-    const courseDetails = tutorRequestDetails.course;
-    const tuteeDetails = tutorRequestDetails.tutorCourse;
+    const courseDetails = tutorSentDetails.course;
+    const tuteeDetails = tutorSentDetails.tutorCourse;
     // console.log(tuteeDetails);
 
     const idOfStudent = tuteeDetails && tuteeDetails.id;
-    // console.log('hey')
-    // console.log(idOfStudent);
+    console.log('hey')
+    console.log(idOfStudent);
     const [studentDetails, setStudentDetails] = useState({});
     
 
@@ -46,4 +46,4 @@ function GrabRequestID(props) {
     );
 }
 
-export default GrabRequestID;
+export default GrabLearning;
